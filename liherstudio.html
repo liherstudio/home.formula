@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liherstudio｜櫟禾有限公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f1f1f1;
+      --white: #ffffff;
+      --black: #1a1a1a;
+      --gray-dark: #3a3a3a;
+      --gray-mid: #6b6b6b;
+      --gray-light: #d0d0d0;
+      --gray-pale: #e8e8e8;
+      --red: #D95F1A;
+      --serif: 'Noto Serif TC', 'Georgia', serif;
+      --sans: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--black);
+      font-family: var(--serif);
+      font-weight: 300;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+
+    .hero-left {
+      padding: 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--gray-light);
+    }
+
+    .hero-tag {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 4.5vw, 64px);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      margin-bottom: 32px;
+    }
+
+    .hero-en {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 40px;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      line-height: 2.1;
+      color: var(--gray-dark);
+      border-left: 3px solid var(--red);
+      padding-left: 20px;
+      margin-bottom: 56px;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      background: var(--black);
+      text-decoration: none;
+      padding: 14px 28px;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .hero-cta:hover { background: var(--red); }
+
+    .hero-right {
+      display: block;
+      background: var(--gray-pale);
+      overflow: hidden;
+    }
+
+    .hero-img-main {
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .hero-img-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-img-small {
+      background: #e2e2e2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-img-small:first-child {
+      border-right: 1px solid var(--gray-light);
+    }
+
+    .placeholder-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 48px; }
+
+    .section-header {
+      margin-bottom: 56px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--gray-light);
+      padding-bottom: 20px;
+    }
+
+    .section-tag {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--black);
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--gray-light);
+    }
+
+    .service-card {
+      padding: 40px 32px;
+      border-right: 1px solid var(--gray-light);
+      transition: background 0.2s;
+    }
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: var(--bg); }
+
+    .service-num {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .service-name {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .service-divider {
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .service-items {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 2.2;
+    }
+
+    /* ── SPACE ── */
+    #space {
+      background: var(--black);
+      color: var(--white);
+      border-bottom: none;
+    }
+
+    #space .section-tag { color: var(--red); }
+    #space .section-title { color: var(--white); }
+    #space .section-header { border-bottom-color: #333; }
+
+    .space-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 3px;
+    }
+
+    .space-img {
+      background: #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .space-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .space-img:first-child { grid-row: 1 / 3; }
+
+    .space-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.5);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+    }
+
+    /* ── BRANDS ── */
+    #brands {
+      background: var(--black);
+      border-bottom: 1px solid #222;
+      padding: 80px 0;
+    }
+
+    #brands .section-header {
+      padding: 0 48px;
+      border-bottom-color: #333;
+    }
+    #brands .section-tag { color: var(--red); }
+    #brands .section-title { color: var(--white); }
+
+    .brands-intro {
+      font-size: 15px;
+      color: #777;
+      max-width: 560px;
+      line-height: 2;
+      margin-bottom: 48px;
+      padding: 0 48px;
+    }
+
+    /* Marquee */
+    .marquee-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 4px;
+      width: max-content;
+      animation: marquee 40s linear infinite;
+    }
+
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      flex-shrink: 0;
+      width: 420px;
+      height: 236px;
+      overflow: hidden;
+    }
+
+    .marquee-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .marquee-item:hover img { transform: scale(1.03); }
+
+    /* ── VIDEOS ── */
+    #videos {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .videos-intro {
+      font-size: 15px;
+      color: var(--gray-dark);
+      max-width: 520px;
+      line-height: 2;
+      margin-bottom: 48px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    .video-card {
+      aspect-ratio: 9/16;
+      background: var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .video-card:hover .video-overlay { opacity: 1; }
+    .video-card:hover .video-num { opacity: 0.06; }
+
+    .video-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      font-size: 96px;
+      font-weight: 700;
+      color: var(--white);
+      opacity: 0.03;
+      transition: opacity 0.3s;
+      line-height: 1;
+      font-family: var(--serif);
+      user-select: none;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--red);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn {
+      width: 52px;
+      height: 52px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 16px;
+      padding-left: 3px;
+    }
+
+    .video-info {
+      position: relative;
+      padding: 16px 20px;
+      background: rgba(10,10,10,0.85);
+    }
+
+    .video-ep {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .video-title {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* ── VIDEO PLAYER CARD ── */
+    .video-player-card {
+      aspect-ratio: 9/16;
+      background: var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    /* 封面圖 */
+    .video-player-card .cover-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+    /* 實際影片（播放時才顯示） */
+    .video-player-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .video-player-card.playing video { opacity: 1; }
+    .video-player-card.playing .cover-img { opacity: 0; }
+    .video-player-card.playing .video-overlay { opacity: 0; pointer-events: none; }
+    .video-player-card.playing .video-num { opacity: 0; }
+    .video-player-card.playing .video-info { opacity: 0; }
+    .video-player-card .video-overlay {
+      background: rgba(0,0,0,0.25);
+      transition: background 0.3s, opacity 0.3s;
+      opacity: 1;
+    }
+    .video-player-card:hover .video-overlay { background: rgba(217,95,26,0.45); }
+    .video-info { transition: opacity 0.3s; }
+
+    .videos-more {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      align-self: flex-start;
+      width: fit-content;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .videos-more:hover { color: var(--red); border-color: var(--red); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--black);
+      color: var(--white);
+      padding: 100px 48px;
+    }
+
+    #contact .section-tag { color: var(--red); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-header { border-bottom-color: #333; }
+
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-tagline-en {
+      font-family: var(--sans);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .contact-tagline-en strong { color: var(--red); font-weight: 400; }
+
+    .contact-tagline-zh {
+      font-size: 14px;
+      color: #777;
+      line-height: 2;
+      font-weight: 300;
+    }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-item {
+      border-top: 1px solid #333;
+      padding-top: 24px;
+    }
+
+    .contact-item-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .contact-item-value {
+      font-size: 16px;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a.contact-item-value:hover { color: var(--red); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white);
+      border-top: 2px solid var(--black);
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .footer-logo span { color: var(--red); }
+
+    .footer-copy {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--gray-mid);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-ig {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--gray-mid);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .footer-ig:hover { color: var(--red); }
+
+    /* ── FADE IN ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--black);
+      transition: all 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── TABLET (≤1024px) ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card:nth-child(2) { border-right: none; }
+      .service-card:nth-child(1),
+      .service-card:nth-child(2) { border-bottom: 1px solid var(--gray-light); }
+
+      .brands-grid { grid-template-columns: repeat(4, 1fr); }
+      .brand-cell:nth-child(6n) { border-right: 1px solid var(--gray-light); }
+      .brand-cell:nth-child(4n) { border-right: none; }
+      .brand-cell:nth-child(n+7) { border-bottom: 1px solid var(--gray-light); }
+      .brand-cell:nth-child(n+9) { border-bottom: none; }
+
+      .videos-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-body { gap: 48px; }
+    }
+
+    /* ── MOBILE (≤768px) ── */
+    @media (max-width: 768px) {
+      /* Nav */
+      nav {
+        padding: 0 24px;
+        height: 56px;
+        position: sticky;
+      }
+      .nav-logo { font-size: 14px; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0; right: 0;
+        background: var(--white);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 2px solid var(--black);
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-top: 1px solid var(--gray-pale); }
+      .nav-links a {
+        display: block;
+        padding: 16px 24px;
+        font-size: 15px;
+      }
+
+      /* Hero */
+      #hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-left {
+        padding: 48px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-light);
+      }
+      .hero-title { font-size: 36px; }
+      .hero-right {
+        grid-template-rows: 240px 120px;
+      }
+
+      /* Sections */
+      section { padding: 56px 24px; }
+      #contact { padding: 56px 24px; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none; border-bottom: 1px solid var(--gray-light); }
+      .service-card:last-child { border-bottom: none; }
+
+      /* Space */
+      .space-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px;
+      }
+      .space-img:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+
+      /* Brands */
+      .brands-grid { grid-template-columns: repeat(3, 1fr); }
+      .brand-cell:nth-child(6n) { border-right: 1px solid var(--gray-light); }
+      .brand-cell:nth-child(4n) { border-right: 1px solid var(--gray-light); }
+      .brand-cell:nth-child(3n) { border-right: none; }
+      .brand-cell:nth-child(n+7) { border-bottom: 1px solid var(--gray-light); }
+      .brand-cell:nth-child(n+10) { border-bottom: none; }
+
+      /* Videos */
+      .videos-grid { grid-template-columns: 1fr; gap: 4px; }
+
+      /* Contact */
+      .contact-body { grid-template-columns: 1fr; gap: 40px; }
+      .contact-tagline-en { font-size: 28px; }
+
+      /* Footer */
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">櫟禾有限公司 <span>|</span> Liherstudio</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services" onclick="closeNav()">服務</a></li>
+    <li><a href="#space" onclick="closeNav()">空間</a></li>
+    <li><a href="#brands" onclick="closeNav()">品牌合作</a></li>
+    <li><a href="#videos" onclick="closeNav()">影音</a></li>
+    <li><a href="#contact" onclick="closeNav()">聯絡</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="選單">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Company Profile</p>
+    <h1 class="hero-title">
+      用生活的靈感，<br>
+      解決人生的難題。
+    </h1>
+    <p class="hero-en">BE SEEN. BE FELT. BE UNDERSTOOD.</p>
+    <p class="hero-tagline">
+      陪你找適合自己的心理保健配方。<br>
+      用藝術與影像，為品牌傳遞文化，<br>
+      為社會帶來理解與共融。
+    </p>
+    <a class="hero-cta" href="#services">探索我們的服務 →</a>
+  </div>
+  <div class="hero-right">
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <div style="aspect-ratio:16/9; overflow:hidden; flex-shrink:0;">
+        <img src="space1.png" alt="諮商空間" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div style="aspect-ratio:16/9; overflow:hidden; flex-shrink:0;">
+        <img src="space2.png" alt="讀書會空間" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div style="aspect-ratio:16/9; overflow:hidden; flex-shrink:0;">
+        <img src="IMG_1319.jpg" alt="拍攝現場" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-tag">Our Services</p>
+      <h2 class="section-title">服務項目</h2>
+    </div>
+  </div>
+  <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="service-card reveal">
+      <p class="service-num">01</p>
+      <h3 class="service-name">個人晤談</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">一對一心理諮商<br>關係與情緒探索<br>生涯議題陪伴</p>
+    </div>
+    <div class="service-card reveal">
+      <p class="service-num">02</p>
+      <h3 class="service-name">團體治療</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">主題式小組<br>支持性團體<br>人際關係探索</p>
+    </div>
+    <div class="service-card reveal">
+      <p class="service-num">03</p>
+      <h3 class="service-name">讀書會<br>工作坊</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">主題讀書會<br>知識轉化工作坊<br>影音內容產出</p>
+    </div>
+    <div class="service-card reveal">
+      <p class="service-num">04</p>
+      <h3 class="service-name">企業顧問<br>行銷整合</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">組織心理健康<br>品牌策略規劃<br>內容行銷執行</p>
+    </div>
+    <div class="service-card reveal">
+      <p class="service-num">05</p>
+      <h3 class="service-name">社會設計案</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">藝術培力計畫<br>餐飲培力計畫<br>公益議題設計</p>
+    </div>
+    <div class="service-card reveal" style="border-right: none;">
+      <p class="service-num">06</p>
+      <h3 class="service-name">DEI<br>多元共融</h3>
+      <div class="service-divider"></div>
+      <p class="service-items">企業 DEI 培訓<br>社會理解推廣<br>跨群體對話</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE -->
+<section id="space">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-tag">Our Space</p>
+      <h2 class="section-title">我們的空間</h2>
+    </div>
+  </div>
+  <div class="space-gallery reveal">
+    <div class="space-img">
+      <img src="IMG_4723.jpg" alt="空間夜景">
+      <span class="space-img-label">Evening Space</span>
+    </div>
+    <div class="space-img">
+      <img src="IMG_1626.jpg" alt="社區空間">
+      <span class="space-img-label">Community Space</span>
+    </div>
+    <div class="space-img">
+      <img src="IMG_6668.jpg" alt="空間一隅">
+      <span class="space-img-label">Living Room</span>
+    </div>
+    <div class="space-img">
+      <img src="IMG_7561.jpg" alt="工作空間">
+      <span class="space-img-label">Workspace</span>
+    </div>
+    <div class="space-img">
+      <img src="IMG_8126.jpg" alt="工作坊現場">
+      <span class="space-img-label">Workshop</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-tag">Collaborations</p>
+      <h2 class="section-title">合作品牌作品</h2>
+    </div>
+  </div>
+  <p class="brands-intro reveal">
+    跨越消費、美妝、科技、公益各領域，<br>
+    用影像說出每個品牌最動人的故事。
+  </p>
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <!-- 第一輪 -->
+      <div class="marquee-item"><img src="2025_KAO_ads/01.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/02.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/03.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/04.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/05.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/06.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/7.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/08.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/10.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/11.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/13.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/14.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/15.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/16.jpg" alt="廣告作品"></div>
+      <!-- 第二輪（無縫循環） -->
+      <div class="marquee-item"><img src="2025_KAO_ads/01.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/02.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/03.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/04.png" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/05.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/06.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/7.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/08.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/10.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/11.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/13.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/14.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/15.jpg" alt="廣告作品"></div>
+      <div class="marquee-item"><img src="2025_KAO_ads/16.jpg" alt="廣告作品"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-tag">Content Series</p>
+      <h2 class="section-title">讀書會影音系列</h2>
+    </div>
+  </div>
+  <p class="videos-intro reveal">
+    從讀書走向對話，從對話走向行動。<br>
+    九集短影音，記錄思想與感受的流動。
+  </p>
+  <div class="videos-grid reveal">
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/505793066_713442804495727_6816209869926295430_n.jpg" alt="EP1封面">
+      <video src="ep1.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 01</p><p class="video-title">你最近忙嗎？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/507846970_753118047039781_712835107613749450_n.jpg" alt="EP2封面">
+      <video src="ep2.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 02</p><p class="video-title">過勞檢查</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/504386975_3011426182382290_7303771997779058307_n.jpg" alt="EP3封面">
+      <video src="ep3.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 03</p><p class="video-title">你通常什麼時候拍照？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/503759376_1169301421630708_5687202556924985878_n.jpg" alt="EP4封面">
+      <video src="ep4.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 04</p><p class="video-title">孤單與孤獨有何不同？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/503813022_1470855250950841_3691900202267472109_n.jpg" alt="EP5封面">
+      <video src="ep5.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 05</p><p class="video-title">你也會雨天憂鬱嗎？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/500749765_1228415551960014_5983839667510586590_n.jpg" alt="EP6封面">
+      <video src="ep6.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 06</p><p class="video-title">物慾是創造力？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/468920748_18155458240335841_1048309976959846922_n.jpg" alt="EP7封面">
+      <video src="ep7.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 07</p><p class="video-title">怎麼做決定？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/494551883_1721901202054920_4613845829214523663_n.jpg" alt="EP8封面">
+      <video src="ep8.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 08</p><p class="video-title">為何我們害怕死亡？</p></div>
+    </div>
+
+    <div class="video-player-card" onclick="toggleVideo(this)">
+      <img class="cover-img" src="EP封面/502758635_2028830270942328_6295294894709909066_n.jpg" alt="EP9封面">
+      <video src="ep9.mp4" playsinline preload="none"></video>
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+      <div class="video-info"><p class="video-ep">家常聊聊 · EP 09</p><p class="video-title">嫉妒的反義詞是？</p></div>
+    </div>
+
+  </div>
+  <a class="videos-more" href="https://www.instagram.com/home.formula_/" target="_blank" rel="noopener">
+    在 Instagram 查看全部影片 →
+  </a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-tag">Contact</p>
+      <h2 class="section-title">一起創造下一個故事</h2>
+    </div>
+  </div>
+  <div class="contact-body">
+    <div class="reveal">
+      <p class="contact-tagline-en">
+        <strong>BE SEEN.</strong><br>
+        BE FELT.<br>
+        BE UNDERSTOOD.
+      </p>
+      <p class="contact-tagline-zh">
+        用藝術與影像，為品牌傳遞文化，<br>
+        為組織創造價值，為社會帶來理解與共融。
+      </p>
+    </div>
+    <div class="contact-right reveal">
+      <div class="contact-item">
+        <p class="contact-item-label">公司名稱</p>
+        <p class="contact-item-value">櫟禾有限公司</p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-item-label">Instagram</p>
+        <a class="contact-item-value" href="https://www.instagram.com/home.formula_/" target="_blank" rel="noopener">
+          @home.formula_
+        </a>
+      </div>
+      <div class="contact-item">
+        <p class="contact-item-label">Email</p>
+        <a class="contact-item-value" href="mailto:liherstudio@gmail.com">liherstudio@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">櫟禾有限公司 <span>|</span> Liherstudio</span>
+  <span class="footer-copy">© 2024 Liherstudio. All rights reserved.</span>
+  <a class="footer-ig" href="https://www.instagram.com/home.formula_/" target="_blank" rel="noopener">
+    IG @home.formula_
+  </a>
+</footer>
+
+<script>
+  function toggleVideo(card) {
+    const video = card.querySelector('video');
+    if (!video) return;
+    if (card.classList.contains('playing')) {
+      video.pause();
+      card.classList.remove('playing');
+    } else {
+      // pause all other videos
+      document.querySelectorAll('.video-player-card.playing').forEach(c => {
+        c.querySelector('video').pause();
+        c.classList.remove('playing');
+      });
+      video.play();
+      card.classList.add('playing');
+      // when video ends, reset
+      video.onended = () => card.classList.remove('playing');
+    }
+  }
+
+  function toggleNav() {
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
