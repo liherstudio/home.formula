@@ -30,6 +30,8 @@
       font-weight: 300;
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     /* ── NAV ── */
@@ -403,7 +405,7 @@
 
     .videos-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 4px;
     }
 
@@ -688,7 +690,7 @@
       .brand-cell:nth-child(n+7) { border-bottom: 1px solid var(--gray-light); }
       .brand-cell:nth-child(n+9) { border-bottom: none; }
 
-      .videos-grid { grid-template-columns: repeat(2, 1fr); }
+      .videos-grid { grid-template-columns: repeat(3, 1fr); }
       .contact-body { gap: 48px; }
     }
 
@@ -764,7 +766,7 @@
       .brand-cell:nth-child(n+10) { border-bottom: none; }
 
       /* Videos */
-      .videos-grid { grid-template-columns: 1fr; gap: 4px; }
+      .videos-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
 
       /* Contact */
       .contact-body { grid-template-columns: 1fr; gap: 40px; }
@@ -839,39 +841,39 @@
   <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
     <div class="service-card reveal">
       <p class="service-num">01</p>
-      <h3 class="service-name">個人晤談</h3>
+      <h3 class="service-name">個人支持</h3>
       <div class="service-divider"></div>
-      <p class="service-items">一對一心理諮商<br>關係與情緒探索<br>生涯議題陪伴</p>
+      <p class="service-items">深度對談<br>生涯發展<br>關係探索<br>情緒理解<br>人生轉折陪伴</p>
     </div>
     <div class="service-card reveal">
       <p class="service-num">02</p>
-      <h3 class="service-name">團體治療</h3>
+      <h3 class="service-name">團體支持</h3>
       <div class="service-divider"></div>
-      <p class="service-items">主題式小組<br>支持性團體<br>人際關係探索</p>
+      <p class="service-items">主題工作坊<br>成長團體<br>支持團體<br>人際關係探索<br>自我覺察練習</p>
     </div>
     <div class="service-card reveal">
       <p class="service-num">03</p>
-      <h3 class="service-name">讀書會<br>工作坊</h3>
+      <h3 class="service-name">知識轉譯</h3>
       <div class="service-divider"></div>
-      <p class="service-items">主題讀書會<br>知識轉化工作坊<br>影音內容產出</p>
+      <p class="service-items">主題讀書會<br>課程活動設計<br>教材內容開發<br>知識整理與轉化</p>
     </div>
     <div class="service-card reveal">
       <p class="service-num">04</p>
-      <h3 class="service-name">企業顧問<br>行銷整合</h3>
+      <h3 class="service-name">組織發展</h3>
       <div class="service-divider"></div>
-      <p class="service-items">組織心理健康<br>品牌策略規劃<br>內容行銷執行</p>
+      <p class="service-items">員工支持方案<br>團隊培力<br>DEI 規劃<br>品牌敘事<br>內部溝通設計</p>
     </div>
     <div class="service-card reveal">
       <p class="service-num">05</p>
-      <h3 class="service-name">社會設計案</h3>
+      <h3 class="service-name">社會設計</h3>
       <div class="service-divider"></div>
-      <p class="service-items">藝術培力計畫<br>餐飲培力計畫<br>公益議題設計</p>
+      <p class="service-items">社區培力<br>公益專案<br>文化倡議<br>參與式設計<br>社會影響力方案</p>
     </div>
     <div class="service-card reveal" style="border-right: none;">
       <p class="service-num">06</p>
-      <h3 class="service-name">DEI<br>多元共融</h3>
+      <h3 class="service-name">影像敘事</h3>
       <div class="service-divider"></div>
-      <p class="service-items">企業 DEI 培訓<br>社會理解推廣<br>跨群體對話</p>
+      <p class="service-items">品牌形象影片<br>非營利紀錄<br>社群內容策劃<br>議題傳播<br>影像故事設計</p>
     </div>
   </div>
 </section>
